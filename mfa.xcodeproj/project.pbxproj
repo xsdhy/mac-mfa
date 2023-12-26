@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BADA51D2B3B1DAE00FE9381 /* TOTPGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BADA5172B3B1DAE00FE9381 /* TOTPGenerator.m */; };
+		5BADA51E2B3B1DAE00FE9381 /* OTPGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BADA5192B3B1DAE00FE9381 /* OTPGenerator.m */; };
+		5BADA51F2B3B1DAE00FE9381 /* MF_Base32Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BADA51B2B3B1DAE00FE9381 /* MF_Base32Additions.m */; };
 		5BBD96C52B3AD8C5001704BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD96C42B3AD8C5001704BF /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -14,7 +17,7 @@
 		5BBD96BF2B3AD8C5001704BF /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
+			dstPath = usr/share/man/man1;
 			dstSubfolderSpec = 0;
 			files = (
 			);
@@ -23,7 +26,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5BBD96C12B3AD8C5001704BF /* mfa */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mfa; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BADA5172B3B1DAE00FE9381 /* TOTPGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TOTPGenerator.m; sourceTree = "<group>"; };
+		5BADA5182B3B1DAE00FE9381 /* OTPGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTPGenerator.h; sourceTree = "<group>"; };
+		5BADA5192B3B1DAE00FE9381 /* OTPGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTPGenerator.m; sourceTree = "<group>"; };
+		5BADA51A2B3B1DAE00FE9381 /* TOTPGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TOTPGenerator.h; sourceTree = "<group>"; };
+		5BADA51B2B3B1DAE00FE9381 /* MF_Base32Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MF_Base32Additions.m; sourceTree = "<group>"; };
+		5BADA51C2B3B1DAE00FE9381 /* MF_Base32Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MF_Base32Additions.h; sourceTree = "<group>"; };
+		5BBD96C12B3AD8C5001704BF /* mfa */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = mfa; path = /Users/xsdhy/data/code/ios/mfa/build/Debug/mfa; sourceTree = "<absolute>"; };
 		5BBD96C42B3AD8C5001704BF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -42,21 +51,18 @@
 			isa = PBXGroup;
 			children = (
 				5BBD96C32B3AD8C5001704BF /* mfa */,
-				5BBD96C22B3AD8C5001704BF /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		5BBD96C22B3AD8C5001704BF /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5BBD96C12B3AD8C5001704BF /* mfa */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		5BBD96C32B3AD8C5001704BF /* mfa */ = {
 			isa = PBXGroup;
 			children = (
+				5BADA51C2B3B1DAE00FE9381 /* MF_Base32Additions.h */,
+				5BADA51B2B3B1DAE00FE9381 /* MF_Base32Additions.m */,
+				5BADA5182B3B1DAE00FE9381 /* OTPGenerator.h */,
+				5BADA5192B3B1DAE00FE9381 /* OTPGenerator.m */,
+				5BADA51A2B3B1DAE00FE9381 /* TOTPGenerator.h */,
+				5BADA5172B3B1DAE00FE9381 /* TOTPGenerator.m */,
 				5BBD96C42B3AD8C5001704BF /* main.m */,
 			);
 			path = mfa;
@@ -78,6 +84,8 @@
 			dependencies = (
 			);
 			name = mfa;
+			packageProductDependencies = (
+			);
 			productName = mfa;
 			productReference = 5BBD96C12B3AD8C5001704BF /* mfa */;
 			productType = "com.apple.product-type.tool";
@@ -105,7 +113,7 @@
 				Base,
 			);
 			mainGroup = 5BBD96B82B3AD8C5001704BF;
-			productRefGroup = 5BBD96C22B3AD8C5001704BF /* Products */;
+			productRefGroup = 5BBD96B82B3AD8C5001704BF;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -119,7 +127,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BADA51D2B3B1DAE00FE9381 /* TOTPGenerator.m in Sources */,
 				5BBD96C52B3AD8C5001704BF /* main.m in Sources */,
+				5BADA51F2B3B1DAE00FE9381 /* MF_Base32Additions.m in Sources */,
+				5BADA51E2B3B1DAE00FE9381 /* OTPGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
