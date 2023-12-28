@@ -5,6 +5,8 @@
 #import "MF_Base32Additions.h"
 
 #import <Security/Security.h>
+#import <AppKit/AppKit.h>
+
 
 #ifdef DEBUG
 #define NSLog(FORMAT, ...) fprintf(stderr,"%s\n",[[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
@@ -12,7 +14,7 @@
 #define NSLog(FORMAT, ...) printf("%s\n",[[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String])
 #endif
 
-NSString * help = @"\nHelp:\n\t-l\t\t\t\tshow saved list\n\t-s code\t\t\tto save secret\n\t-g code\t\t\tto get the totp\n\t-d code\t\t\tdelete code\nVersion:\n\t0.0.2\n\thttps://github.com/xsdhy/mac-mfa";
+NSString * help = @"\nHelp:\n\t-l\t\t\t\tshow saved list\n\t-s code\t\t\tto save secret\n\t-g code\t\t\tto get the totp\n\t-d code\t\t\tdelete code\nVersion:\n\t0.0.3\n\thttps://github.com/xsdhy/mac-mfa";
 
 // 保存secret到钥匙串
 void savePassword(NSString *code, NSString *password) {
@@ -82,6 +84,14 @@ void generator(NSString *secret){
     TOTPGenerator *generator = [[TOTPGenerator alloc] initWithSecret:secretData algorithm:kOTPGeneratorSHA1Algorithm digits:digits period:period];
 
     NSString *pin = [generator generateOTPForDate:[NSDate dateWithTimeIntervalSince1970:timestamp]];
+    
+    // 获取系统剪贴板
+    NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
+    // 清空剪贴板以便设置新内容
+    [pasteboard clearContents];
+    // 将字符串保存到剪贴板
+    [pasteboard setString:pin forType:NSPasteboardTypeString];
+    
     NSLog(@"%@",pin);
 }
 
