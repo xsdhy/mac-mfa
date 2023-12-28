@@ -1,7 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "OTPGenerator.h"
 
-
 @interface TOTPGenerator : OTPGenerator
 
 // The period to use when calculating the counter.
@@ -19,6 +18,6 @@
 // |digits|, |period| and |now| values configured on the object.
 // The return value is an NSString of |digits| length, with leading
 // zero-padding as required.
-- (unsigned int)generateOTPForDate:(NSDate *)date;
+- (NSString *)generateOTPForDate:(NSDate *)date;
 
 @end

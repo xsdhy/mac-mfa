@@ -26,13 +26,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		02583BE92B3D1766002AF4EA /* mfa */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mfa; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BADA5172B3B1DAE00FE9381 /* TOTPGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TOTPGenerator.m; sourceTree = "<group>"; };
 		5BADA5182B3B1DAE00FE9381 /* OTPGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTPGenerator.h; sourceTree = "<group>"; };
 		5BADA5192B3B1DAE00FE9381 /* OTPGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTPGenerator.m; sourceTree = "<group>"; };
 		5BADA51A2B3B1DAE00FE9381 /* TOTPGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TOTPGenerator.h; sourceTree = "<group>"; };
 		5BADA51B2B3B1DAE00FE9381 /* MF_Base32Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MF_Base32Additions.m; sourceTree = "<group>"; };
 		5BADA51C2B3B1DAE00FE9381 /* MF_Base32Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MF_Base32Additions.h; sourceTree = "<group>"; };
-		5BBD96C12B3AD8C5001704BF /* mfa */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = mfa; path = /Users/xsdhy/data/code/ios/mfa/build/Debug/mfa; sourceTree = "<absolute>"; };
 		5BBD96C42B3AD8C5001704BF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				5BBD96C32B3AD8C5001704BF /* mfa */,
+				02583BE92B3D1766002AF4EA /* mfa */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,7 +88,7 @@
 			packageProductDependencies = (
 			);
 			productName = mfa;
-			productReference = 5BBD96C12B3AD8C5001704BF /* mfa */;
+			productReference = 02583BE92B3D1766002AF4EA /* mfa */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -248,6 +249,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 			};
 			name = Release;

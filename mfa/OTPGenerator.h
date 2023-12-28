@@ -1,6 +1,5 @@
 #import <Foundation/Foundation.h>
 
-
 @interface OTPGenerator : NSObject
 
 @property (readonly, nonatomic, copy) NSString *algorithm;
@@ -21,14 +20,14 @@
 // |counter| and |digits| values configured on the object.
 // The return value is an NSString of |digits| length, with leading
 // zero-padding as required.
-- (unsigned int)generateOTPForCounter:(uint64_t)counter;
+- (NSString *)generateOTPForCounter:(uint64_t)counter;
 
 
 // Instance method to generate an OTP using the |algorithm|, |secret|,
 // |counter| and |digits| values configured on the object.
 // The return value is an NSString of |digits| length, with leading
 // zero-padding as required.
-- (unsigned int)generateOTP;
+- (NSString *)generateOTP;
 
 @end
 

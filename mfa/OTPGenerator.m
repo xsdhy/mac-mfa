@@ -61,7 +61,7 @@ NSString *const kOTPGeneratorSHAMD5Algorithm = @"MD5";
          [algorithm isEqualToString:kOTPGeneratorSHAMD5Algorithm]);
     if (!goodAlgorithm || digits_ > 8 || digits_ < 6 || !secret_) {
       NSLog(@"Bad args digits(min 6, max 8): %d secret: %@ algorithm: %@",
-                digits_, secret_, algorithm_);
+                 digits_, secret_, algorithm_);
       self = nil;
     }
   }
@@ -74,12 +74,12 @@ NSString *const kOTPGeneratorSHAMD5Algorithm = @"MD5";
 }
 
 // Must be overriden by subclass.
-- (unsigned int)generateOTP {
+- (NSString *)generateOTP {
   [self doesNotRecognizeSelector:_cmd];
-  return 0;
+  return nil;
 }
 
-- (unsigned int)generateOTPForCounter:(uint64_t)counter {
+- (NSString *)generateOTPForCounter:(uint64_t)counter {
   CCHmacAlgorithm alg;
   NSUInteger hashLength = 0;
   if ([algorithm_ isEqualToString:kOTPGeneratorSHA1Algorithm]) {
@@ -96,7 +96,7 @@ NSString *const kOTPGeneratorSHAMD5Algorithm = @"MD5";
     hashLength = CC_MD5_DIGEST_LENGTH;
   } else {
     //_GTMDevAssert(NO, @"Unknown algorithm");
-    return 0;
+    return nil;
   }
 
   NSMutableData *hash = [NSMutableData dataWithLength:hashLength];
@@ -114,8 +114,7 @@ NSString *const kOTPGeneratorSHAMD5Algorithm = @"MD5";
   unsigned int truncatedHash =
   NSSwapBigIntToHost(*((unsigned int *)&ptr[offset])) & 0x7fffffff;
   unsigned int pinValue = truncatedHash % kPinModTable[digits_];
-
-  return pinValue;
+  return [NSString stringWithFormat:@"%0*u", (int)digits_, pinValue];
 }
 
 @end
